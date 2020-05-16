@@ -16,7 +16,7 @@
     components: {TabBarItem},
     data(){
       return{
-        currentIndex:0
+        currentIndex:-1
       }
     },
     props:{

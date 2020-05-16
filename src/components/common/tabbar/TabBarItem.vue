@@ -6,10 +6,10 @@
     </div>
 <!--    :path="pathStr[index]"-->
     <div v-if="isActive">
-      <div v-for="(item,index) in smallTitles" class="small-title">
+      <div v-for="(item,index) in smallTitles" class="small-title" @click="itemClick(index)" >
         <router-link :to="pathStr[index]" class="router-dec">
           <img src="~assets/img/small-title-icon.png" class="small-title-img">
-          <span class="small-title-text">{{item}}</span>
+          <span :class="{active:currentIndex2===index}" class="small-title-text" >{{item}}</span>
         </router-link>
       </div>
     </div>
@@ -31,12 +31,21 @@
         default(){
           return[];
         }
+      },
+    },
+    data(){
+      return{
+        currentIndex2:-1
       }
     },
     computed:{
 
     },
     methods:{
+      itemClick(index){
+        console.log(index)
+        this.currentIndex2=index
+      }
     }
   }
 </script>
@@ -66,12 +75,12 @@
   }
 
   .title-text{
-    margin-left: 20px;
+    margin-left: 15px;
   }
 
   .small-title{
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 15px;
     cursor: pointer;
   }
 
@@ -83,4 +92,11 @@
     text-decoration: none;
     color: #707070;
   }
+
+  .active{
+    padding-right: 5px;
+    border-right: 2px solid #00BFFF;
+    color: #00BFFF;
+  }
+
 </style>
