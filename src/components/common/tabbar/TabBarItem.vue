@@ -3,10 +3,12 @@
     <div class="title">
       <img src="~assets/img/title-icon.png" class="title-img">
       <span class="title-text">{{title}}</span>
+      <img v-if="!isActive" src="~assets/img/arrow.png" class="title-right-img">
+      <img v-if="isActive" src="~assets/img/down-arrow.png" class="title-right-img">
     </div>
 <!--    :path="pathStr[index]"-->
     <div v-if="isActive">
-      <div v-for="(item,index) in smallTitles" class="small-title" @click="itemClick(index)" >
+      <div v-for="(item,index) in smallTitles" class="small-title" @click="itemClick(index)" :class="{itemActive:currentIndex2===index}">
         <router-link :to="pathStr[index]" class="router-dec">
           <img src="~assets/img/small-title-icon.png" class="small-title-img">
           <span :class="{active:currentIndex2===index}" class="small-title-text" >{{item}}</span>
@@ -42,8 +44,11 @@
 
     },
     methods:{
+      currentIndex2Init(){
+        this.currentIndex2=-1
+      },
       itemClick(index){
-        console.log(index)
+        this.$emit("itemClick")
         this.currentIndex2=index
       }
     }
@@ -95,8 +100,19 @@
 
   .active{
     padding-right: 5px;
-    border-right: 2px solid #00BFFF;
     color: #00BFFF;
+  }
+
+  .itemActive{
+    border-right: 2px solid #00BFFF;
+  }
+
+  .title-right-img{
+    width: 10px;
+    height: 10px;
+
+    position: relative;
+    left: 40px;
   }
 
 </style>

@@ -4,7 +4,10 @@
       <tab-bar-item :title="item"
                     :small-titles="smallTitle[index]"
                     :is-active="currentIndex===index"
-                    :path-str="pathStr[index]" class="tab-bar-item"></tab-bar-item>
+                    :path-str="pathStr[index]"
+                    @itemClick="itemClick"
+                    class="tab-bar-item"
+                    ref="child"></tab-bar-item>
     </div>
   </div>
 </template>
@@ -40,6 +43,11 @@
     methods:{
       titleClick(index){
         this.currentIndex=index;
+      },
+      itemClick(){
+        for (let i=0;i<this.$refs.child.length;i++){
+          this.$refs.child[i].currentIndex2Init();
+        }
       }
     },
     computed:{
