@@ -1,12 +1,13 @@
 <template>
   <div>
-    123
+    home
   </div>
 </template>
 
 <script>
-  import {songFindAll} from "../../network/song";
 
+
+  import {songFindAll} from "../../network/song";
 
   export default {
     name: "home",
@@ -17,7 +18,6 @@
     },
     created() {
       songFindAll().then(res=>{
-        console.log(res)
         this.songsList=res
       })
     }
