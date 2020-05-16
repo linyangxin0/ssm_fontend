@@ -13,14 +13,9 @@
     name: "home",
     data(){
       return{
-        songsList:[]
       }
     },
-    created() {
-      songFindAll().then(res=>{
-        this.songsList=res
-      })
-    }
+
   }
 </script>
 
