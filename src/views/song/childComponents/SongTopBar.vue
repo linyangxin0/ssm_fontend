@@ -1,15 +1,30 @@
 <template>
   <div class="bar-content">
-    <input type="text" class="search-input" placeholder="请输入搜索内容">
-    <button class="search-btn">搜索</button>
-    <button class="all-btn">全部</button>
+    <input type="text" class="search-input" v-model="searchText" placeholder="请输入搜索内容">
+    <button class="search-btn" @click="searchSong">搜索</button>
+    <button class="all-btn" @click="findAll">全部</button>
     <button class="btn">新增歌曲</button>
   </div>
 </template>
 
 <script>
   export default {
-    name: "SongTopBar"
+    name: "SongTopBar",
+    data(){
+      return{
+        searchText:''
+      }
+    },
+    methods:{
+      searchSong(){
+        this.$emit("searchSong",this.searchText)
+      },
+      findAll(){
+        this.$emit("findAll")
+        this.searchText=''
+      }
+    }
+
   }
 </script>
 
