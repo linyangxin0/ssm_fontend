@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <table>
+  <div class="list-content">
+    <div v-if="songList.length==0" class="none-content">
+      <span class="none-text">无可匹配项,请检查是否输入正确关键词.</span>
+    </div>
+    <table v-if="songList.length!=0">
       <tr>
         <th>序号</th>
         <th>名称</th>
@@ -69,6 +72,26 @@ export default {
 
   .text-red{
     color: red;
+  }
+
+  /*.list-content{*/
+  /*  position: relative;*/
+  /*}*/
+
+  .none-content{
+    width: 500px;
+    height: 100px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+  }
+
+  .none-text{
+    font-size: 25px;
   }
 
 </style>

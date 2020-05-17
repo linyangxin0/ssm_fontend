@@ -6,7 +6,10 @@ const advertisement=()=>import('../views/advertisement/advertisement');
 const device=()=>import('../views/device/device');
 const deviceSong=()=>import('../views/deviceSong/deviceSong');
 const role=()=>import('../views/role/role');
+
 const song=()=>import('../views/song/song');
+const addSong=()=>import('../views/song/childViews/addSong');
+
 const user=()=>import('../views/user/user');
 
 
@@ -38,6 +41,9 @@ Vue.use(VueRouter);
     },{
       path:'/user',
       component:user
+    },{
+      path:'/song/addSong',
+      component:addSong
     }
 ];
 
