@@ -61,7 +61,7 @@
 
 <script>
 
-  import {findSongById} from "../../../network/song";
+  import {findSongById,editSong} from "../../../network/song";
   import {formatDate} from "../../../common/utils";
 
 
@@ -87,7 +87,10 @@
     },
     methods:{
       clickEditSong(){
-        console.log('132')
+        editSong(this.editId,this.editName,this.editInfo,this.editAuthor,this.editUpdateTime,this.editStatus).then(res=>{
+          alert('编辑成功')
+          this.$router.back()
+        })
       },
       backClick(){
         this.$router.back()

@@ -47,3 +47,16 @@ export function  findSongById(id) {
 }
 
 
+//未完成优化，为解决bug
+export function  editSong(id,name,info,author,updateTime,status) {
+  return request({
+    url:'/song/editSong.do',
+    // method:'POST',
+    // headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    params: {
+      id,name,info,author,updateTime,status
+    }
+  })
+}
+
+
