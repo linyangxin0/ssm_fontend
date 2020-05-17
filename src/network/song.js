@@ -15,7 +15,7 @@ export function  songSearch(searchText) {
   })
 }
 
-
+//未完成优化，为解决bug
 export function  addSong(name,info,author,updateTime,status) {
   return request({
     url:'/song/saveSong.do',
@@ -26,3 +26,24 @@ export function  addSong(name,info,author,updateTime,status) {
     }
   })
 }
+
+
+export function  delASong(id) {
+  return request({
+    url:'/song/delASong.do',
+    params:{
+      id
+    }
+  })
+}
+
+export function  findSongById(id) {
+  return request({
+    url:'/song/findSongById.do',
+    params:{
+      id
+    }
+  })
+}
+
+

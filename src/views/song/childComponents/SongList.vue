@@ -22,8 +22,8 @@
         <td v-if="item.status!=1">设计中</td>
         <td v-if="item.status==1" class="text-red">发布</td>
         <td>
-          <button>编辑</button>
-          <button>删除</button>
+          <button class="list-btn" @click="editSong(item)">编辑</button>
+          <button class="list-btn" @click="delSong(item.id)">删除</button>
         </td>
       </tr>
     </table>
@@ -49,7 +49,15 @@ export default {
           return[]
         }
       }
+    },
+  methods:{
+    delSong(id){
+      this.$emit("delSong",id)
+    },
+    editSong(id){
+      this.$emit("editSong",id)
     }
+  }
   }
 </script>
 
@@ -74,10 +82,6 @@ export default {
     color: red;
   }
 
-  /*.list-content{*/
-  /*  position: relative;*/
-  /*}*/
-
   .none-content{
     width: 500px;
     height: 100px;
@@ -92,6 +96,16 @@ export default {
 
   .none-text{
     font-size: 25px;
+  }
+
+  .list-btn{
+    width: 60px;
+    height: 30px;
+
+    border-radius: 5px;
+    border: 1px solid #707070;
+    background-color: #fff;
+    margin-right: 20px;
   }
 
 </style>

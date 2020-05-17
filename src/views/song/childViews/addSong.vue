@@ -44,13 +44,10 @@
           <button class="add-btn" @click="clickAddSong">确定</button>
         </td>
         <td class="btn-center">
-          <button class="add-btn">取消</button>
+          <button class="add-btn"  @click="backClick">取消</button>
         </td>
       </tr>
-
     </table>
-
-
   </div>
 
 </template>
@@ -86,12 +83,13 @@
         //   'updateTime':this.addUpdateTime,
         //   'status':this.addStatus
         // }
-        console.log(this.addName,this.addInfo,this.addAuthor,this.addUpdateTime,this.addStatus)
         addSong(this.addName,this.addInfo,this.addAuthor,this.addUpdateTime,this.addStatus).then(res=>{
-          console.log(res)
           alert('添加成功')
+          this.$router.back()
         })
-
+      },
+      backClick(){
+        this.$router.back()
       }
     }
   }

@@ -9,6 +9,7 @@ const role=()=>import('../views/role/role');
 
 const song=()=>import('../views/song/song');
 const addSong=()=>import('../views/song/childViews/addSong');
+const editSong=()=>import('../views/song/childViews/editSong');
 
 const user=()=>import('../views/user/user');
 
@@ -38,12 +39,15 @@ Vue.use(VueRouter);
     },{
       path:'/song',
       component:song
-    },{
-      path:'/user',
-      component:user
-    },{
+    }, {
       path:'/song/addSong',
       component:addSong
+    },{
+      path:'/song/editSong/:id',
+      component:editSong
+    }, {
+      path:'/user',
+      component:user
     }
 ];
 
