@@ -1,10 +1,10 @@
 <template>
   <div class="bar-content">
     <input type="text" class="search-input" v-model="searchText" placeholder="请输入搜索内容">
-    <button class="search-btn" @click="searchSong">搜索</button>
-    <button class="all-btn" @click="findAll">全部</button>
-    <router-link to="/song/addSong">
-      <button class="btn">新增歌曲</button>
+    <button class="search-btn" @click="searchSongList">搜索</button>
+    <button class="all-btn" @click="findAllSongList">全部</button>
+    <router-link to="/songList/addSongList">
+      <button class="btn">新增歌单</button>
     </router-link>
   </div>
 </template>
@@ -18,12 +18,12 @@
       }
     },
     methods:{
-      searchSong(){
-        this.$emit("searchSong",this.searchText)
-      },
-      findAll(){
-        this.$emit("findAll")
+      findAllSongList(){
+        this.$emit("findAllSongList")
         this.searchText=''
+      },
+      searchSongList(){
+        this.$emit("searchSongList",this.searchText)
       }
     }
   }

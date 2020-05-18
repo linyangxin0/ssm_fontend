@@ -13,6 +13,9 @@ const editSong=()=>import('../views/song/childViews/editSong');
 
 const songList=()=>import('../views/songList/songList');
 const songListShow=()=>import('../views/songList/childViews/songListShow');
+const addSongToSongList=()=>import('../views/songList/childViews/addSongToSongList');
+const addSongList=()=>import('../views/songList/childViews/addSongList');
+
 
 
 const user=()=>import('../views/user/user');
@@ -55,6 +58,12 @@ Vue.use(VueRouter);
     },{
       path:'/songList/songListShow/:id',
       component:songListShow
+    },{
+      path:'/songList/addSongToSongList/:id',
+      component:addSongToSongList
+    },{
+      path:'/songList/addSongList',
+      component:addSongList
     },{
       path:'/user',
       component:user

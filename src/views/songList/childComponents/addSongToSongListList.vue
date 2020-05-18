@@ -1,21 +1,28 @@
 <template>
   <div class="list-content">
-    <div v-if="songListList.length==0" class="none-content">
+    <div v-if="songList.length==0" class="none-content">
       <span class="none-text">无可匹配项,请检查是否输入正确关键词.</span>
     </div>
-    <table v-if="songListList.length!=0">
+    <table v-if="songList.length!=0">
       <tr>
         <th>序号</th>
-        <th>歌单名称</th>
+        <th>名称</th>
+        <th>描述</th>
+        <th>歌手</th>
+        <th>更新时间</th>
+        <th>状态</th>
         <th>操作</th>
       </tr>
-      <tr v-for="item in songListList">
+      <tr v-for="item in songList">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
+        <td>{{item.info}}</td>
+        <td>{{item.author}}</td>
+        <td>{{item.updateTime|showDate}}</td>
+        <td v-if="item.status!=1">设计中</td>
+        <td v-if="item.status==1" class="text-red">发布</td>
         <td>
-          <button class="list-btn" @click="getSongList(item.id)">查看</button>
           <button class="list-btn" @click="addSongToSongList(item.id)">添加</button>
-          <button class="list-btn" @click="delSongList(item.id)">删除</button>
         </td>
       </tr>
     </table>
@@ -23,8 +30,11 @@
 </template>
 
 <script>
+
+  import {formatDate} from "../../../common/utils";
+
   export default {
-    name: "SongListList",
+    name: "addSongToSongListList",
     filters:{
       showDate:function (value) {
         let date = new Date(value);
@@ -32,7 +42,7 @@
       }
     },
     props:{
-      songListList:{
+      songList:{
         type:Array,
         default(){
           return[]
@@ -40,14 +50,8 @@
       }
     },
     methods:{
-      getSongList(id){
-        this.$emit("getSongList",id)
-      },
       addSongToSongList(id){
-        this.$router.push('/songList/addSongToSongList/'+id)
-      },
-      delSongList(id){
-        this.$emit("delSongList",id)
+        this.$emit("addSongToSongList",id)
       }
     }
   }
@@ -99,6 +103,4 @@
     background-color: #fff;
     margin-right: 20px;
   }
-
-
 </style>
