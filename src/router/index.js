@@ -3,8 +3,16 @@ import VueRouter from 'vue-router'
 
 const Home=()=>import('../views/home/Home');
 const advertisement=()=>import('../views/advertisement/advertisement');
+
 const device=()=>import('../views/device/device');
+const addDevice=()=>import('../views/device/childViews/addDevice');
+const editDevice=()=>import('../views/device/childViews/editDevice');
+
 const deviceSong=()=>import('../views/deviceSong/deviceSong');
+const deviceSongShow=()=>import('../views/deviceSong/childViews/deviceSongShow');
+const addDeviceSong=()=>import('../views/deviceSong/childViews/addDeviceSong');
+
+
 const role=()=>import('../views/role/role');
 
 const song=()=>import('../views/song/song');
@@ -38,8 +46,20 @@ Vue.use(VueRouter);
       path:'/device',
       component:device
     },{
+      path:'/device/addDevice',
+      component:addDevice
+    },{
+      path:'/device/editDevice/:id',
+      component:editDevice
+    },{
       path:'/deviceSong' ,
       component:deviceSong
+    },{
+      path:'/deviceSong/addDeviceSong/:id' ,
+      component:deviceSongShow
+    },{
+      path:'/deviceSong/deviceSongShow/:id' ,
+      component:addDeviceSong
     },{
       path:'/role' ,
       component:role
