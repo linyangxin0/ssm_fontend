@@ -18,12 +18,12 @@
       return{
         titles:['音乐管理', '用户管理','设备管理'],
         smallTitle:[
-          ['歌单','设备音乐管理'],
+          ['歌曲','歌单管理','设备音乐管理'],
           ['用户管理','角色管理'],
           ['设备详情','设备广告']
         ],
         pathStr: [
-          ['/song','/deviceSong'],
+          ['/song','/songList','/deviceSong'],
           ['/user','/role'],
           ['/device','/advertisement']
         ]
