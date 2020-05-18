@@ -12,7 +12,6 @@ const deviceSong=()=>import('../views/deviceSong/deviceSong');
 const deviceSongShow=()=>import('../views/deviceSong/childViews/deviceSongShow');
 const addDeviceSong=()=>import('../views/deviceSong/childViews/addDeviceSong');
 
-
 const role=()=>import('../views/role/role');
 
 const song=()=>import('../views/song/song');
@@ -24,9 +23,10 @@ const songListShow=()=>import('../views/songList/childViews/songListShow');
 const addSongToSongList=()=>import('../views/songList/childViews/addSongToSongList');
 const addSongList=()=>import('../views/songList/childViews/addSongList');
 
-
-
 const user=()=>import('../views/user/user');
+const addUser=()=>import('../views/user/childViews/addUser');
+const addRoleToUser=()=>import('../views/user/childViews/addRoleToUser');
+const editUser=()=>import('../views/user/childViews/editUser');
 
 
 
@@ -87,6 +87,15 @@ Vue.use(VueRouter);
     },{
       path:'/user',
       component:user
+    },{
+      path:'/user/addUser',
+      component:addUser
+    },{
+      path:'/user/addRoleToUser/:id',
+      component:addRoleToUser
+    },{
+      path:'/user/editUser/:id',
+      component:editUser
     }
 ];
 
