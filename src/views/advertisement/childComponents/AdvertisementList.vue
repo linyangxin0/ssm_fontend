@@ -15,8 +15,8 @@
         <td>{{item.context}}</td>
         <td>{{item.getDate|showDate}}</td>
         <td>
-          <button class="list-btn" @click="editUser(item.id)">编辑</button>
-          <button class="list-btn-add" @click="addRoleToUser(item.id)">添加角色</button>
+          <button class="list-btn" @click="editAdvertisement(item.id)">编辑</button>
+          <button class="list-btn-add" @click="addAdvertisementToDevice(item.id)">添加设备</button>
           <button class="list-btn" @click="delAdvertisement(item.id)">删除</button>
         </td>
       </tr>
@@ -42,11 +42,11 @@
       delAdvertisement(id){
         this.$emit("delAdvertisement",id)
       },
-      editUser(id){
-        this.$router.push('/user/editUser/'+id)
+      editAdvertisement(id){
+        this.$router.push('/advertisement/editAdvertisement/'+id)
       },
-      addRoleToUser(id){
-        this.$router.push('/user/addRoleToUser/'+id)
+      addAdvertisementToDevice(id){
+        this.$router.push('/advertisement/addAdvertisementToDevice/'+id)
       }
     },
     filters:{

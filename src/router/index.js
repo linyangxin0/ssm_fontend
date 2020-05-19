@@ -4,6 +4,9 @@ import VueRouter from 'vue-router'
 const Home=()=>import('../views/home/Home');
 const advertisement=()=>import('../views/advertisement/advertisement');
 const addAdvertisement=()=>import('../views/advertisement/childViews/addAdvertisement');
+const addAdvertisementToDevice=()=>import('../views/advertisement/childViews/addAdvertisementToDevice');
+const editAdvertisement=()=>import('../views/advertisement/childViews/editAdvertisement');
+
 
 
 const device=()=>import('../views/device/device');
@@ -49,6 +52,12 @@ Vue.use(VueRouter);
     },{
       path:'/advertisement/addAdvertisement',
       component:addAdvertisement
+    },{
+      path:'/advertisement/addAdvertisementToDevice/:id',
+      component:addAdvertisementToDevice
+    },{
+      path:'/advertisement/editAdvertisement/:id',
+      component:editAdvertisement
     },{
       path:'/device',
       component:device
