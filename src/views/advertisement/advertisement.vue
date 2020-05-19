@@ -1,12 +1,12 @@
 <template>
   <div class="content">
     <advertisement-top-bar @searchAdvertisement="searchAdvertisement" @findAll="findAll"/>
-    <advertisement-list :advertisement-list="advertisementList"/>
+    <advertisement-list :advertisement-list="advertisementList" @delAdvertisement="delAdvertisement"/>
   </div>
 </template>
 
 <script>
-  import {advertisementFindAll,advertisementSearch} from "../../network/advertisement";
+  import {advertisementFindAll,advertisementSearch,delAdvertisementById} from "../../network/advertisement";
 
   import AdvertisementList from "./childComponents/AdvertisementList";
   import AdvertisementTopBar from "./childComponents/advertisementTopBar";
@@ -34,6 +34,12 @@
       },
       findAll(){
         this._advertisementFindAll()
+      },
+      delAdvertisement(id){
+        delAdvertisementById(id).then(res=>{
+          alert('删除成功')
+          this._advertisementFindAll()
+        })
       }
     }
   }

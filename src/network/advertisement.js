@@ -15,3 +15,22 @@ export function  advertisementSearch(searchText) {
     }
   })
 }
+
+
+export function  addAdvertisement(context,getDate) {
+  return request({
+    url:'/advertisement/addAdvertisement.do',
+    params:{
+      context,getDate
+    }
+  })
+}
+
+export function  delAdvertisementById(id) {
+  return request({
+    url:'/advertisement/delAdvertisementById.do',
+    params:{
+      id
+    }
+  })
+}

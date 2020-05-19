@@ -17,7 +17,7 @@
         <td>
           <button class="list-btn" @click="editUser(item.id)">编辑</button>
           <button class="list-btn-add" @click="addRoleToUser(item.id)">添加角色</button>
-          <button class="list-btn" @click="delUser(item.id)">删除</button>
+          <button class="list-btn" @click="delAdvertisement(item.id)">删除</button>
         </td>
       </tr>
     </table>
@@ -39,8 +39,8 @@
       }
     },
     methods:{
-      delUser(id){
-        this.$emit("delUser",id)
+      delAdvertisement(id){
+        this.$emit("delAdvertisement",id)
       },
       editUser(id){
         this.$router.push('/user/editUser/'+id)
