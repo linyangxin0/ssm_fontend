@@ -37,7 +37,7 @@ const addUser=()=>import('../views/user/childViews/addUser');
 const addRoleToUser=()=>import('../views/user/childViews/addRoleToUser');
 const editUser=()=>import('../views/user/childViews/editUser');
 
-
+const notFound=()=>import('../views/404/404');
 
 
 Vue.use(VueRouter);
@@ -63,6 +63,9 @@ VueRouter.prototype.push = function push (to) {
     },{
       path: '/login',
       component:login
+    },{
+      path: '/404',
+      component:notFound
     },{
       path:'/advertisement',
       component:advertisement,

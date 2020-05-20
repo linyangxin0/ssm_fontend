@@ -26,7 +26,7 @@ router.beforeEach((to, from, next) => {
     // * 没有token信息，redirect to login
     if (!localStorage.token) {
       next({
-        path: '/login',
+        path: '/404',
         query: {redirect: to.fullPath}
       })
     } else {
