@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div class="content">
-      <router-view/>
+        <router-view/>
     </div>
-    <main-tab-bar/>
+    <main-tab-bar v-if="$route.meta.showTab"/>
   </div>
 </template>
 

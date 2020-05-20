@@ -51,6 +51,7 @@
       _songFindAll(){
         songFindAll().then(res=>{
           this.songsList=res
+          console.log(res)
         })
       }
     }

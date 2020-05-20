@@ -1,5 +1,16 @@
 import {request} from "./request";
 
+export function  login(username,password) {
+  return request({
+    url:'/user/login.do',
+    method:'post',
+    params:{
+      username,password
+    }
+  })
+}
+
+
 export function  userFindAll() {
   return request({
     url:'/user/findAll.do'

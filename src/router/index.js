@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home=()=>import('../views/home/Home');
+const login=()=>import('../views/login/login');
+
+
 const advertisement=()=>import('../views/advertisement/advertisement');
 const addAdvertisement=()=>import('../views/advertisement/childViews/addAdvertisement');
 const addAdvertisementToDevice=()=>import('../views/advertisement/childViews/addAdvertisementToDevice');
@@ -39,82 +42,165 @@ const editUser=()=>import('../views/user/childViews/editUser');
 
 Vue.use(VueRouter);
 
+const VueRouterPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (to) {
+  return VueRouterPush.call(this, to).catch(err => err)
+}
+
   const routes = [
     {
       path:'/',
-      component:Home
+      component:Home,
+      meta:{
+        showTab:true
+      }
     },{
       path: '/home',
-      component:Home
+      component:Home,
+      meta:{
+        showTab:true
+      },
+    },{
+      path: '/login',
+      component:login
     },{
       path:'/advertisement',
-      component:advertisement
+      component:advertisement,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/advertisement/addAdvertisement',
-      component:addAdvertisement
+      component:addAdvertisement,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/advertisement/addAdvertisementToDevice/:id',
-      component:addAdvertisementToDevice
+      component:addAdvertisementToDevice,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/advertisement/editAdvertisement/:id',
-      component:editAdvertisement
+      component:editAdvertisement,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/device',
-      component:device
+      component:device,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/device/addDevice',
-      component:addDevice
+      component:addDevice,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/device/editDevice/:id',
-      component:editDevice
+      component:editDevice,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/deviceSong' ,
-      component:deviceSong
+      component:deviceSong,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/deviceSong/addDeviceSong/:id' ,
-      component:deviceSongShow
+      component:deviceSongShow,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/deviceSong/deviceSongShow/:id' ,
-      component:addDeviceSong
+      component:addDeviceSong,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/role' ,
-      component:role
+      component:role,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/role/delUserFromRole/:id' ,
-      component:delUserFromRole
+      component:delUserFromRole,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/song',
-      component:song
+      component:song,
+      meta:{
+        showTab:true
+      }
     }, {
       path:'/song/addSong',
-      component:addSong
+      component:addSong,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/song/editSong/:id',
-      component:editSong
+      component:editSong,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/songList',
-      component:songList
+      component:songList,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/songList/songListShow/:id',
-      component:songListShow
+      component:songListShow,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/songList/addSongToSongList/:id',
-      component:addSongToSongList
+      component:addSongToSongList,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/songList/addSongList',
-      component:addSongList
+      component:addSongList,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/user',
-      component:user
+      component:user,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/user/addUser',
-      component:addUser
+      component:addUser,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/user/addRoleToUser/:id',
-      component:addRoleToUser
+      component:addRoleToUser,
+      meta:{
+        showTab:true
+      }
     },{
       path:'/user/editUser/:id',
-      component:editUser
+      component:editUser,
+      meta:{
+        showTab:true
+      }
     }
 ];
 

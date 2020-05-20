@@ -1,5 +1,15 @@
 <template>
   <div class="content">
+    <div v-if="$store.state.userName==''" class="top">
+      <span>请登录系统,</span>
+      <router-link to="/login" class="router-click ">
+        <span>点击登录</span>
+      </router-link>
+    </div>
+    <div v-if="$store.state.userName!=''" class="top">
+      <span>欢迎,{{$store.state.userName}}</span>
+      <button @click="logoutBtn" class="logout-btn">退出登录</button>
+    </div>
     <tab-bar :titles="titles"
              :small-title="smallTitle"
              :path-str="pathStr">
@@ -27,7 +37,13 @@
           ['/user','/role'],
           ['/device','/advertisement']
         ]
-
+      }
+    },
+    methods:{
+      logoutBtn(){
+        localStorage.removeItem("token")
+        this.$store.commit("removeUserName")
+        this.$router.push('/login')
       }
     }
   }
@@ -44,4 +60,23 @@
 
     color: #707070;
   }
+
+  .top{
+    position: relative;
+    left: 30px;
+    margin-top: 30px;
+  }
+
+  .router-click{
+    text-decoration: none;
+    color: #ff7f7d;
+  }
+
+  .logout-btn{
+    border-radius: 3px;
+    border: 1.5px #c7c7c7 solid;
+    background-color: #fff;
+  }
+
+
 </style>
