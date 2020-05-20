@@ -3,7 +3,7 @@
     <input type="text" class="search-input" v-model="searchText" placeholder="请输入搜索内容">
     <button class="search-btn" @click="searchSongList">搜索</button>
     <button class="all-btn" @click="findAllSongList">全部</button>
-    <router-link to="/songList/addSongList">
+    <router-link to="/songList/addSongList" v-if="$store.state.isAdmin">
       <button class="btn">新增歌单</button>
     </router-link>
   </div>

@@ -42,14 +42,15 @@
     methods: {
       loginClick() {
         login(this.name, this.password).then(res => {
-          console.log(res)
           // * 存储token
           localStorage.setItem('token', res.data.token);
           localStorage.setItem('userId', res.data.userId);
+          localStorage.setItem('isAdmin', res.data.isAdmin);
+          console.log(localStorage.getItem('isAdmin'))
           this.$store.commit('addUserName', res.data.user.name)
+          this.$store.commit('changeIsAdmin', res.data.isAdmin)
           alert('登陆成功')
           this.$router.push({path: this.$route.query.redirect || '/home',})
-          // this.$router.push('/home')
         })
       }
     }

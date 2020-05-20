@@ -3,7 +3,7 @@
     <input type="text" class="search-input" v-model="searchText" placeholder="请输入搜索内容">
     <button class="search-btn" @click="searchUser">搜索</button>
     <button class="all-btn" @click="findAll">全部</button>
-    <router-link to="/user/addUser">
+    <router-link to="/user/addUser" v-if="$store.state.isAdmin">
       <button class="btn">新增用户</button>
     </router-link>
   </div>

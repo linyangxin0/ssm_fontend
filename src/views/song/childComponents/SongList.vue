@@ -11,7 +11,7 @@
         <th>歌手</th>
         <th>更新时间</th>
         <th>状态</th>
-        <th>操作</th>
+        <th v-if="$store.state.isAdmin">操作</th>
       </tr>
       <tr v-for="item in songList">
         <td>{{item.id}}</td>
@@ -21,7 +21,7 @@
         <td>{{item.updateTime|showDate}}</td>
         <td v-if="item.status!=1">设计中</td>
         <td v-if="item.status==1" class="text-red">发布</td>
-        <td>
+        <td v-if="$store.state.isAdmin">
           <button class="list-btn" @click="editSong(item)">编辑</button>
           <button class="list-btn" @click="delSong(item.id)">删除</button>
         </td>

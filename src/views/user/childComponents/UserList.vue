@@ -8,14 +8,14 @@
         <th>序号</th>
         <th>用户名</th>
         <th>状态</th>
-        <th>操作</th>
+        <th v-if="$store.state.isAdmin">操作</th>
       </tr>
       <tr v-for="item in userList">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td v-if="item.status!=1" class="text-red">未激活</td>
         <td v-if="item.status==1">激活</td>
-        <td>
+        <td v-if="$store.state.isAdmin">
           <button class="list-btn" @click="editUser(item.id)">编辑</button>
           <button class="list-btn-add" @click="addRoleToUser(item.id)">添加角色</button>
           <button class="list-btn" @click="delUser(item.id)">删除</button>

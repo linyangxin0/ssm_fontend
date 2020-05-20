@@ -4,7 +4,7 @@
     <button class="search-btn" @click="searchDevice">搜索</button>
     <button class="all-btn" @click="findAll">全部</button>
     <router-link to="/device/addDevice">
-      <button class="btn">新增设备</button>
+      <button class="btn" v-if="$store.state.isAdmin">新增设备</button>
     </router-link>
   </div>
 </template>

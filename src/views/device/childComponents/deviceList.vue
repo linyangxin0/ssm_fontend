@@ -9,7 +9,7 @@
         <th>名称</th>
         <th>设备类型</th>
         <th>当前状态</th>
-        <th>操作</th>
+        <th v-if="$store.state.isAdmin">操作</th>
       </tr>
       <tr v-for="item in deviceList">
         <td>{{item.id}}</td>
@@ -18,7 +18,7 @@
         <td v-if="item.type!=0">开发板设备</td>
         <td v-if="item.status==0">离线</td>
         <td v-if="item.status!=0">在线</td>
-        <td>
+        <td v-if="$store.state.isAdmin">
           <button class="list-btn" @click="editSong(item.id)">编辑</button>
           <button class="list-btn" @click="delDevice(item.id)">删除</button>
         </td>

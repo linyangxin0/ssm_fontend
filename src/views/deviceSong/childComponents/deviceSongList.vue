@@ -8,14 +8,14 @@
         <th>序号</th>
         <th>名称</th>
         <th>设备类型</th>
-        <th>操作</th>
+        <th v-if="$store.state.isAdmin">操作</th>
       </tr>
       <tr v-for="item in deviceList">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td v-if="item.type==0">Android设备</td>
         <td v-if="item.type!=0">开发板设备</td>
-        <td>
+        <td v-if="$store.state.isAdmin">
           <button class="list-btn" @click="getDeviceSong(item.id)">查看歌单</button>
           <button class="list-btn" @click="addDeviceSong(item.id)">添加歌单</button>
         </td>

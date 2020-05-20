@@ -7,12 +7,12 @@
       <tr>
         <th>序号</th>
         <th>名称</th>
-        <th>操作</th>
+        <th v-if="$store.state.isAdmin">操作</th>
       </tr>
       <tr v-for="item in roleList">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
-        <td>
+        <td v-if="$store.state.isAdmin">
           <button class="list-btn" @click="findUserByRole(item.id)">查看用户</button>
         </td>
       </tr>

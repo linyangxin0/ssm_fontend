@@ -41,7 +41,7 @@
     },
     methods:{
       logoutBtn(){
-        localStorage.removeItem("token")
+        localStorage.clear()
         this.$store.commit("removeUserName")
         this.$router.push('/login')
       }

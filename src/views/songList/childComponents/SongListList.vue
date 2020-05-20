@@ -7,12 +7,12 @@
       <tr>
         <th>序号</th>
         <th>歌单名称</th>
-        <th>操作</th>
+        <th v-if="$store.state.isAdmin">操作</th>
       </tr>
       <tr v-for="item in songListList">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
-        <td>
+        <td v-if="$store.state.isAdmin">
           <button class="list-btn" @click="getSongList(item.id)">查看</button>
           <button class="list-btn" @click="addSongToSongList(item.id)">添加</button>
           <button class="list-btn" @click="delSongList(item.id)">删除</button>

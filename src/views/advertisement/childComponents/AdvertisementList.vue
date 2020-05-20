@@ -8,13 +8,13 @@
         <th>序号</th>
         <th>广告内容</th>
         <th>时间</th>
-        <th>操作</th>
+        <th v-if="$store.state.isAdmin">操作</th>
       </tr>
       <tr v-for="item in advertisementList">
         <td>{{item.id}}</td>
         <td>{{item.context}}</td>
         <td>{{item.getDate|showDate}}</td>
-        <td>
+        <td v-if="$store.state.isAdmin">
           <button class="list-btn" @click="editAdvertisement(item.id)">编辑</button>
           <button class="list-btn-add" @click="addAdvertisementToDevice(item.id)">添加设备</button>
           <button class="list-btn" @click="delAdvertisement(item.id)">删除</button>

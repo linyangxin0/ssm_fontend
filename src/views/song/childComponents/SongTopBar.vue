@@ -3,7 +3,7 @@
     <input type="text" class="search-input" v-model="searchText" placeholder="请输入搜索内容">
     <button class="search-btn" @click="searchSong">搜索</button>
     <button class="all-btn" @click="findAll">全部</button>
-    <router-link to="/song/addSong">
+    <router-link to="/song/addSong" v-if="$store.state.isAdmin">
       <button class="btn">新增歌曲</button>
     </router-link>
   </div>
@@ -17,6 +17,7 @@
         searchText:''
       }
     },
+    props:{},
     methods:{
       searchSong(){
         this.$emit("searchSong",this.searchText)
@@ -25,6 +26,8 @@
         this.$emit("findAll")
         this.searchText=''
       }
+    },
+    created() {
     }
 
   }
