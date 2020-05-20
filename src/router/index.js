@@ -67,139 +67,162 @@ VueRouter.prototype.push = function push (to) {
       path:'/advertisement',
       component:advertisement,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/advertisement/addAdvertisement',
       component:addAdvertisement,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/advertisement/addAdvertisementToDevice/:id',
       component:addAdvertisementToDevice,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/advertisement/editAdvertisement/:id',
       component:editAdvertisement,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/device',
       component:device,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/device/addDevice',
       component:addDevice,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/device/editDevice/:id',
       component:editDevice,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/deviceSong' ,
       component:deviceSong,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/deviceSong/addDeviceSong/:id' ,
       component:deviceSongShow,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/deviceSong/deviceSongShow/:id' ,
       component:addDeviceSong,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/role' ,
       component:role,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/role/delUserFromRole/:id' ,
       component:delUserFromRole,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/song',
       component:song,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     }, {
       path:'/song/addSong',
       component:addSong,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/song/editSong/:id',
       component:editSong,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/songList',
       component:songList,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/songList/songListShow/:id',
       component:songListShow,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/songList/addSongToSongList/:id',
       component:addSongToSongList,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/songList/addSongList',
       component:addSongList,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/user',
       component:user,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/user/addUser',
       component:addUser,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/user/addRoleToUser/:id',
       component:addRoleToUser,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     },{
       path:'/user/editUser/:id',
       component:editUser,
       meta:{
-        showTab:true
+        showTab:true,
+        requiresAuth:true
       }
     }
 ];
